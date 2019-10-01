@@ -17,8 +17,7 @@ export let promises = () => {
         const reposUrl = `https://api.github.com/users/${name}/repos`;
         getData(reposUrl).then(res => res.json()).then((data) => {
             let list = document.createElement('ul');
-            if (data.length > 0) {
-
+            if (data.length) {
             data.forEach(e => {
                 let li = document.createElement('li');
                 li.textContent = e.name;
