@@ -22,8 +22,30 @@ const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick
     'Blair, Robert', 'Blair, Tony', 'Blake, William'];
 //filtering born in 1500
 filteredByBornDate = inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600);
-console.log('FilteredByborndate', filteredByBornDate);
+console.log('filtering born in 1500', filteredByBornDate);
 
 //array of the inventors first and last name
 firstAndLastNames = inventors.map(inventor => inventor.first +' '+ inventor.last);
-console.log('firstAndLast', firstAndLastNames);
+console.log('inventors first and last name', firstAndLastNames);
+
+//Sort the inventors by birthdate, oldest to youngest
+
+sortedInventorsByBirthDate = inventors.sort((x,y)=> {return x.year - y.year});
+
+console.log('sorted inventors by birthdate', sortedInventorsByBirthDate);
+
+//Return the sum of the years lived by all the inventors together
+let initialValue = 0;
+sumOfYears = inventors.reduce((acc, y)=>{return  acc + (y.passed - y.year)}, initialValue);
+console.log('sumOfTheYears', sumOfYears);
+
+//Sort the inventors by years lived
+
+sortedByYearsLived = inventors.sort((x,y)=> {return (x.passed - x.year)-(y.passed - y.year)});
+console.log('sortedByyearsLived',sortedByYearsLived);
+
+//Sort the ​ people​ alphabetically by last name
+
+sortedPeople = people.sort((x,y)=> {return x-y} );
+
+console.log('Sort the ​ people​ alphabetically by last name', sortedPeople);
